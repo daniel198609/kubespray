@@ -127,7 +127,7 @@
     update_cache: "{{ omit if ansible_distribution == 'Fedora' else True }}"
   register: docker_task_result
   until: docker_task_result|succeeded
-  retries: 4
+  retries: 1
   delay: "{{ retry_stagger | random + 3 }}"
   with_items: "{{ docker_package_info.pkgs }}"
   notify: restart docker

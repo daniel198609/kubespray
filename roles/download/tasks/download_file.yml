@@ -24,7 +24,7 @@
     mode: "{{ download.mode|default(omit) }}"
   register: get_url_result
   until: "'OK' in get_url_result.msg or 'file already exists' in get_url_result.msg"
-  retries: 4
+  retries: 1
   delay: "{{ retry_stagger | random + 3 }}"
   when:
     - download.enabled
