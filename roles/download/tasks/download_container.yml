@@ -16,7 +16,7 @@
   command: "{{ docker_bin_dir }}/docker pull {{ pull_args }}"
   register: pull_task_result
   until: pull_task_result|succeeded
-  retries: 4
+  retries: 1
   delay: "{{ retry_stagger | random + 3 }}"
   when:
     - download_run_once
