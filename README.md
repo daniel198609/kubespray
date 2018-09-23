@@ -1,5 +1,15 @@
 ![Kubernetes Logo](https://raw.githubusercontent.com/kubernetes-incubator/kubespray/master/docs/img/kubernetes-logo.png)
 
+```
+简介：该库是从`kubernetes-incubator/kubespray`开出的分支，经过修改可用于在谷歌资源访问受限的地区（如：中国大陆）安装 Kubernetes 集群。  
+为了绕过限制，采取了以下措施：  
+  * 将原 kubespray 代码中所有 gcr.io 仓库的 docker 镜像，通过 docker hub （中央仓库）的自动构建功能，构建成自己的 `waychan23` 命名空间下的镜像，并修改所有配置文件中的相关的路径，指向自己构建的镜像  
+  * 将原 kubespray 代用中所有来自 *.google.* 的 HTTP 资源，下载到本地，并上传至服务器能访问到的文件服务（我用了阿里云的OSS服务），并修改所有配置文件中相关路径，指向自己的文件服务  
+使用该库已成功实验了，在阿里云3台ECS（2v4G,ubuntu-16.04）上搭建 kubernetes 集群，并运行了应用。  
+
+说明：库中的 docker 镜像是由 docker hub 上公开托管的，可以直接使用，但是 HTTP 资源是托管在笔者私有的阿里云 OSS 上（因为财力有限，无法提供到公网提供大家使用，不便之处请见谅），还请需要自行修改指向可访问的文件服务。
+```
+
 Deploy a Production Ready Kubernetes Cluster
 ============================================
 
