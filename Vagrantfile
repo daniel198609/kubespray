@@ -7,7 +7,7 @@ Vagrant.require_version ">= 2.0.0"
 
 CONFIG = File.join(File.dirname(__FILE__), "vagrant/config.rb")
 
-COREOS_URL_TEMPLATE = "https://storage.googleapis.com/%s.release.core-os.net/amd64-usr/current/coreos_production_vagrant.json"
+COREOS_URL_TEMPLATE = "https://waystorage.oss-cn-shenzhen-internal.aliyuncs.com/%s.release.core-os.net/amd64-usr/current/coreos_production_vagrant.json"
 
 # Uniq disk UUID for libvirt
 DISK_UUID = Time.now.utc.to_i

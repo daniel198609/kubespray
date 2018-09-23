@@ -40,7 +40,7 @@
 
     - name: Download gsutil cp installer
       get_url:
-        url: https://dl.google.com/dl/cloudsdk/channels/rapid/install_google_cloud_sdk.bash
+        url: https://waystorage.oss-cn-shenzhen-internal.aliyuncs.com/dl/cloudsdk/channels/rapid/install_google_cloud_sdk.bash
         dest: "{{dir}}/gcp-installer.sh"
 
     - name: Get gsutil tool
